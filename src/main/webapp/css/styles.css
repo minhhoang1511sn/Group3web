@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Information */
+body {
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+
+#Content1 {
+    margin: 1% 0 1% 40%;
+}
+
+#Content2 {
+    margin: 1% 0 1% 43.5%;
+}
+
+#Content3 {
+    margin: 1% 0 1% 43.5%;
+}
+
+.member {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns:repeat(3, 1fr) 30px;
+    text-align: center;
+}
+.icon-cog {
+    color: black;
+
+}
+.info {
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
+#avt {
+    border-radius: 50%;
+    width: 20%;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/*Another information*/
+p {
+    font-size: large;
+}
+
+.Grid {
+    width: 100%;
+    margin-top: 50px auto;
+    border: 1px solid grey;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns:repeat(6, 1fr) 14px;
+    padding: 20px;
+}
+
+.Grid a {
+    color: black;
+    font-family: Raleway;
+    text-decoration: none;
+}
+
+.Assignment {
+    border-radius: 5%;
+    text-align: center;
+    margin: 0 15px 0 15px;
+    padding: 5px 5px 0 5px;
+}
+
+#Ex1 {
+    background: rgba(128, 255, 0, 0.6);
+}
+
+#Ex2 {
+    background: rgba(0, 255, 255, 0.7);
+}
+
+#Ex3 {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+#Ex4 {
+    background: rgba(65, 105, 225, 0.7);
+}
+
+#Ex5 {
+    background: rgba(0, 128, 128, 0.7);
+}
+
+#Final {
+    background: rgba(255, 255, 0, 0.7);
+}
+
+#Ex1:hover {
+    background: green;
+}
+
+#Ex2:hover {
+    background: deepskyblue;
+}
+
+#Ex3:hover {
+    background: darkred;
+}
+
+#Ex4:hover {
+    background: darkblue;
+}
+
+#Ex5:hover {
+    background: blue;
+}
+
+#Final:hover {
+    background: yellowgreen;
+}
