@@ -2,15 +2,26 @@
 <html lang="vn">
 <head>
     <meta charset="utf-8">
-    <title>Murach's Java Servlets and JSP</title>
+    <title>5.2</title>
     <link rel="stylesheet" href="css/mains.css" type="text/css"/>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
-    <link href="css/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body>
 <h1>Join to our Email List</h1>
 <p>To join our email list, enter your name and email address below</p>
-<form action="emailList" method="post">
+<p>Post Method</p>
+<form action="test" method="post">
+    <input type="hidden" name="action" value="add" required>
+    <label class="pad_top">Email:</label>
+    <input type="email" name="email" value="" required><br>
+    <label class="pad_top">First Name:</label>
+    <input type="text" name="firstName" value="" required><br>
+    <label class="pad_top">Last Name:</label>
+    <input type="text" name="lastName" value="" required><br>
+    <label>&nbsp;</label>
+    <input type="submit" value="Join Now" class="margin_left">
+</form>
+<p>Get Method</p>
+<form action="test" method="get">
     <input type="hidden" name="action" value="add" required>
     <label class="pad_top">Email:</label>
     <input type="email" name="email" value="" required><br>
