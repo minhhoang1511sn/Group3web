@@ -1,29 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Murach - Java Servlets and JSP</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    <title>Murach's Java Servlets and JSP</title>
+    <link rel="stylesheet" href="css/mains.css" type="text/css"/>
 </head>
 <body>
-<h1>List of all albums
-</h1>
-<p>
-    <a href="download?action=checkUser&amp;productCode=8601">
-        Masew
-    </a><br>
-    <a href="download?action=checkUser&amp;productCode=pf01">
-        X2X
-    </a><br>
-    <a href="download?action=checkUser&amp;productCode=pf02">
-        Tăng Duy Tân
-    </a><br>
-    <a href="download?action=checkUser&amp;productCode=jr01">
-        Phát Hồ
-    </a><br>
-</p>
-<h1>Giỏ Hàng</h1>
+
 <h1>CD list</h1>
 <table>
     <tr>
@@ -64,5 +48,6 @@
         </form></td>
     </tr>
 </table>
+
 </body>
 </html>

@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="css/mains.css" type="text/css"/>
-</head>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/includes/header.html" />
 
-<body>
+<h1>Join our email list</h1>
+<p>To join our email list, enter your name and
+    email address below.</p>
+
+<c:if test="${message != null}">
+    <p><i>${message}</i></p>
+</c:if>
 <h1>Thanks for joining our email list</h1>
 
 <p>Here is the information that you entered:</p>
@@ -33,5 +34,4 @@
     <input type="submit" value="Return">
 </form>
 
-</body>
-</html>
+<c:import url="/includes/footer.jsp" />
