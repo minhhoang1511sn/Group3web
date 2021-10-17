@@ -8,7 +8,8 @@ public class LineItem implements Serializable {
     private Product product;
     private int quantity;
 
-    public LineItem() {}
+    public LineItem() {
+    }
 
     public void setProduct(Product p) {
         product = p;
