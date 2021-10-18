@@ -7,12 +7,12 @@ import javax.servlet.http.*;
 
 import murach.data.*;
 import murach.business.*;
+
 @WebServlet(name = "cart", value = "/cart")
 public class CartServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         ServletContext sc = getServletContext();
@@ -20,15 +20,14 @@ public class CartServlet extends HttpServlet {
         // get current action
         String action = request.getParameter("action");
         if (action == null) {
-            action = "cart";  // default action
+            action = "cart"; // default action
         }
 
         // perform action and set URL to appropriate page
         String url = "/ass92.jsp";
         if (action.equals("shop")) {
-            url = "/ass92.jsp";    // the "index" page
-        }
-        else if (action.equals("cart")) {
+            url = "/ass92.jsp"; // the "index" page
+        } else if (action.equals("cart")) {
             String productCode = request.getParameter("productCode");
             String quantityString = request.getParameter("quantity");
 
@@ -38,8 +37,8 @@ public class CartServlet extends HttpServlet {
                 cart = new Cart();
             }
 
-            //if the user enters a negative or invalid quantity,
-            //the quantity is automatically reset to 1.
+            // if the user enters a negative or invalid quantity,
+            // the quantity is automatically reset to 1.
             int quantity;
             try {
                 quantity = Integer.parseInt(quantityString);
@@ -64,18 +63,15 @@ public class CartServlet extends HttpServlet {
 
             session.setAttribute("cart", cart);
             url = "/cart.jsp";
-        }
-        else if (action.equals("checkout")) {
+        } else if (action.equals("checkout")) {
             url = "/checkout.jsp";
         }
 
-        sc.getRequestDispatcher(url)
-                .forward(request, response);
+        sc.getRequestDispatcher(url).forward(request, response);
     }
 
     @Override
-    protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doPost(request, response);
     }
