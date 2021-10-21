@@ -19,9 +19,9 @@ public class DownloadServlet extends HttpServlet {
         }
 
         // perform action and set URL to appropriate page
-        String url = "/index.jsp";
+        String url = "/ass2.jsp";
         if (action.equals("viewAlbums")) {
-            url = "/index.jsp";
+            url = "/ass2.jsp";
         } else if (action.equals("checkUser")) {
             url = checkUser(request, response);
         } else if (action.equals("viewCookies")) {
@@ -40,7 +40,7 @@ public class DownloadServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         // perform action and set URL to appropriate page
-        String url = "/index.jsp";
+        String url = "/ass2.jsp";
         if (action.equals("registerUser")) {
             url = registerUser(request, response);
         }
@@ -66,11 +66,18 @@ public class DownloadServlet extends HttpServlet {
             if (emailAddress == null || emailAddress.equals("")) {
                 url = "/register.jsp";
             }
+
             // if cookie exists, create User object and go to Downloads page
             else {
                 ServletContext sc = getServletContext();
                 String path = sc.getRealPath("/WEB-INF/EmailList.txt");
-                user = UserIO.getUser(emailAddress, path);
+                try{
+                    user = UserIO.getUser(emailAddress, path);
+                }catch(Exception e)
+                {
+
+                }
+
                 session.setAttribute("user", user);
                 url = "/" + productCode + "_download.jsp";
             }
@@ -98,8 +105,12 @@ public class DownloadServlet extends HttpServlet {
         // write the User object to a file
         ServletContext sc = getServletContext();
         String path = sc.getRealPath("/WEB-INF/EmailList.txt");
-        UserIO.add(user, path);
+        try{
+            UserIO.addRecord(user, path);
+        }catch (Exception e)
+        {
 
+        }
         // store the User object as a session attribute
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
